@@ -1,0 +1,15 @@
+{
+  "name": "gulp-and-11ty-example-project",
+  "version": "1.0.0",
+  "description": "Gulp and 11ty",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniil Dybka",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "gulp": "^4.0.2"
+  }
+}
