@@ -1,5 +1,6 @@
 {
   "name": "gulp-and-11ty-example-project",
+  "type": "module",
   "version": "1.0.0",
   "description": "Gulp and 11ty",
   "main": "index.js",
