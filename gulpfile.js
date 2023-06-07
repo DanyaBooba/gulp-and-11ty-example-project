@@ -1,9 +1,9 @@
 const gulp = require("gulp");
-// const del = require("del");
+const del = require("del");
 const htmlmin = require("gulp-htmlmin");
-// const cssmin = require("gulp-cssmin");
-// const cssconcat = require("gulp-concat-css");
-// const autoprefixer = require("gulp-autoprefixer");
+const cssmin = require("gulp-cssmin");
+const cssconcat = require("gulp-concat-css");
+const autoprefixer = require("gulp-autoprefixer");
 
 // HTML
 
@@ -87,7 +87,6 @@ gulp.task(
 		"stylesconst",
 		"javascript",
 		"media",
-		"fonts",
-		"watch"
+		"fonts"
 	)
 );
