@@ -4,12 +4,14 @@
   "description": "Gulp and 11ty",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy && gulp build && eleventy --serve"
+    "build": "eleventy && gulp build && eleventy --serve",
+    "11ty": "eleventy --serve"
   },
   "author": "Daniil Dybka",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "browser-sync": "^2.29.3",
     "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
