@@ -1,9 +1,9 @@
 const gulp = require("gulp");
-const del = require("del");
+// const del = require("del");
 const htmlmin = require("gulp-htmlmin");
-const cssmin = require("gulp-cssmin");
-const cssconcat = require("gulp-concat-css");
-const autoprefixer = require("gulp-autoprefixer");
+// const cssmin = require("gulp-cssmin");
+// const cssconcat = require("gulp-concat-css");
+// const autoprefixer = require("gulp-autoprefixer");
 
 // HTML
 
@@ -61,7 +61,7 @@ gulp.task("fonts", () => {
 // Watch
 
 gulp.task("watch", () => {
-	gulp.watch("src/**/*.html", gulp.series("html"));
+	gulp.watch("public/**/*.html", gulp.series("html", "delete"));
 	gulp.watch("src/**/*.css", gulp.series("stylesindex", "stylesconst"));
 	gulp.watch("src/**/*.js", gulp.series("javascript"));
 	gulp.watch(
@@ -73,17 +73,21 @@ gulp.task("watch", () => {
 // Delete
 
 gulp.task("delete", () => {
-	return del([
-		"dist/styles",
-		"dist/styles.css",
-		"dist/scripts",
-		"dist/scripts.js",
-	]);
+	return del("public");
 });
 
 // Default
 
-export default gulp.series(
-	gulp.parallel(html, styles, javascript, more, fonts, images),
-	gulp.parallel(watch, server)
+gulp.task(
+	"build",
+	gulp.series(
+		"html",
+		"delete",
+		"stylesindex",
+		"stylesconst",
+		"javascript",
+		"media",
+		"fonts",
+		"watch"
+	)
 );
